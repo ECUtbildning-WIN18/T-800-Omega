@@ -7,6 +7,7 @@ namespace T_800_Omega
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+            
         }
     }
 }
