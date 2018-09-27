@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace T_800_Omega
+namespace T800
 {
     class Program
     {
