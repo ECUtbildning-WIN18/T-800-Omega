@@ -10,7 +10,6 @@ namespace T800.Domain        //Ska det stå .Domain här? Det blir dock inga rö
             Menu menu = new Menu();
 
             menu.RunningMenu();
-            
         }
     }
 }
