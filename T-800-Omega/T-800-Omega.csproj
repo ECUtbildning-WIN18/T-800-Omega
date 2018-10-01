@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net472</TargetFramework>
+    <TargetFramework>net40</TargetFramework>
     <RootNamespace>T_800_Omega</RootNamespace>
   </PropertyGroup>
 
