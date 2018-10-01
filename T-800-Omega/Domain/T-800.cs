@@ -47,20 +47,24 @@ namespace T800.Domain
         public void ChooseTarget(BaseObject target)
         {
             Target = target;
-            Console.WriteLine("The target is choosen");
+            Console.WriteLine("The target is choosen");            
         }
         public void Attack()
         {
-            if (Target.Destructable==true)
+            if (Target != null)
             {
-                Target.Destructable = false;
-                Target = null;
-                Console.WriteLine("Attack attack");
-            }                
-            else
-            {
-                Target = null;
-                Console.WriteLine("Target is not destructable.I Cannot attack on it ");
+                if (Target.Destructable == true)
+                {
+                    Target.Destructable = false;
+                    Target = null;
+                    Console.WriteLine("Attack attack");
+
+                }
+                else
+                {
+                    Target = null;
+                    Console.WriteLine("Target is not destructable.I Cannot attack on it ");
+                }
             }
         }
         public void ShowStatus()
