@@ -10,6 +10,7 @@ namespace T800.Domain
         public bool IsActivated { get; set; }
         public bool BatteryCharge { get; set; }
         public BaseObject Target { get; set; }
+        SpeechSynthesizer synth = new SpeechSynthesizer();
 
         public T800() : base(0,true)
         {
@@ -67,11 +68,13 @@ namespace T800.Domain
             if (BatteryCharge == true)
             {
                 Console.WriteLine("T-800 is fully charged and it is ready to use");
-                SpeechSynthesizer synth = new SpeechSynthesizer();
                 synth.Speak("T-800 is fully charged and it is ready to use");
             }
             else
+            {
                 Console.WriteLine("T-800 is out of battery please charge it");
+                synth.Speak("T-800 is out of battexsgsdry pldsaease chgaarge iiiiit");
+            }
         }
     }
 }
