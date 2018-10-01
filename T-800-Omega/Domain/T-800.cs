@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Speech.Synthesis;
 
 namespace T800.Domain
 {
@@ -9,6 +10,14 @@ namespace T800.Domain
         public bool IsActivated { get; set; }
         public bool BatteryCharge { get; set; }
         public BaseObject Target { get; set; }
+
+        public T800() : base(0,true)
+        {
+            IsActivated = true;
+            BatteryCharge = true;
+            Target = null;
+
+        }
 
         public T800(int objectid, bool destructable, bool isActivated, bool batteryCharge, BaseObject target) : base(objectid, destructable)
         {
@@ -56,7 +65,11 @@ namespace T800.Domain
         public void ShowStatus()
         {
             if (BatteryCharge == true)
+            {
                 Console.WriteLine("T-800 is fully charged and it is ready to use");
+                SpeechSynthesizer synth = new SpeechSynthesizer();
+                synth.Speak("T-800 is fully charged and it is ready to use");
+            }
             else
                 Console.WriteLine("T-800 is out of battery please charge it");
         }
