@@ -39,27 +39,27 @@ namespace T800.Domain
            switch (usersChoice)
             {
                 case 1:
-                    BaseObject.Activate();
+                    Baseobject.Activate();
                     break;
 
                 case 2:
-                    BaseObject.Deactivate();
+                    Baseobject.Deactivate();
                     break;
 
                 case 3:
-                    BaseObject.SelfDestruct();
+                    Baseobject.SelfDestruct();
                     break;
 
                 case 4:
-                    BaseObject.ShowStatus();
+                    Baseobject.ShowStatus();
                     break;
 
                 case 5:
-                    BaseObject.ChooseTarget();
+                    Baseobject.ChooseTarget();
                     break;
 
                 case 6:
-                    BaseObject.Attack();
+                    Baseobject.Attack();
                     break;
 
                 default:

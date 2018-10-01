@@ -7,5 +7,6 @@ namespace T800.Domain
     class BaseObject
     {
 
+   
     }
 }
