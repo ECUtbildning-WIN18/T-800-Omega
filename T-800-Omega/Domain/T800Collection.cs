@@ -7,6 +7,7 @@ namespace T800.Domain
     class T800Collection
     {
         private List<T800> t800List = new List<T800>();
+        
         public T800Collection()
         {
             for(int i = 0; i < 5; i++)
@@ -21,6 +22,9 @@ namespace T800.Domain
                 t800.Attack();
             }
         }
-
+        public T800 GetNumberOne()
+        {
+            return t800List[0];
+        }
     }
 }
