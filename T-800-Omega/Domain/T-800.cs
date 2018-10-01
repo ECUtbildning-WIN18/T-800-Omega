@@ -8,9 +8,9 @@ namespace T800.Domain
     {
         public bool IsActivated { get; set; }
         public bool BatteryCharge { get; set; }
-        public int Target { get; set; }
+        public BaseObject Target { get; set; }
 
-        public T800(int objectid, bool destructable, bool isActivated, bool batteryCharge, int target) : base(objectid, destructable)
+        public T800(int objectid, bool destructable, bool isActivated, bool batteryCharge, BaseObject target) : base(objectid, destructable)
         {
             IsActivated = isActivated;
             BatteryCharge = batteryCharge;
@@ -19,32 +19,39 @@ namespace T800.Domain
 
         public void SelfDestruct()
         {
-            Console.WriteLine("Self destruction is successful");
+            IsActivated = false;
+            BatteryCharge = false;
+            Target = null;
+                Console.WriteLine("Self destruction is successful");
         }
         public void Activate()
         {
-            if (IsActivated == false)
-                Console.WriteLine("Please Activate the T-800");
-            else
-                Console.WriteLine("T-800 is Activated");
+            IsActivated = true;
+            Console.WriteLine("T-800 is Activated");
         }
         public void Deactivate()
         {
-            if (IsActivated == true)
-                Console.WriteLine("'please Deactivate the T-800 to conserve power");
-            else
-                Console.WriteLine("Target-800 is Deactivated");
+            IsActivated = false;
+            Console.WriteLine("T-800 is Deactivated");
         }
-        public void ChooseTarget()
+        public void ChooseTarget(BaseObject target)
         {
+            Target = target;
             Console.WriteLine("The target is choosen");
         }
         public void Attack()
         {
-            if (Destructable == true)
+            if (Target.Destructable==true)
+            {
+                Target.Destructable = false;
+                Target = null;
                 Console.WriteLine("Attack attack");
+            }                
             else
+            {
+                Target = null;
                 Console.WriteLine("Target is not destructable.I Cannot attack on it ");
+            }
         }
         public void ShowStatus()
         {
