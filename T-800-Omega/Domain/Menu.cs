@@ -9,11 +9,15 @@ namespace T800.Domain
     {
         T800 t800 = new T800(0, true, true, true, null);
         T800Collection t800s = new T800Collection();
+        BaseObject b1 = new BaseObject(1, true);
+        BaseObject b2 = new BaseObject(2, true);
+        BaseObject b3 = new BaseObject(3, true);
+
 
         public Menu()
         {
             Console.WriteLine(t800);
-
+            t800s.GetNumberOne().ChooseTarget(b3);
         }
 
 
@@ -45,8 +49,9 @@ namespace T800.Domain
                     Console.WriteLine("Wrong answer!!!:( You have to press a digit between 1-5");
                 }
             } while (loop);
+            Console.Clear();
 
-           switch (usersChoice)
+            switch (usersChoice)
             {
                 case 1:
                     t800.Activate();
@@ -65,7 +70,7 @@ namespace T800.Domain
                     break;
 
                 case 5:
-                    t800.ChooseTarget(null);
+                    t800.ChooseTarget(b2);
                     break;
 
                 case 6:
@@ -75,12 +80,17 @@ namespace T800.Domain
                 case 7:
                     t800s.AttackAllTargets();
                     break;
-
-
                 default:
                     RunningMenu();
                     break;
+
             }
+            
+            if(Console.ReadKey().Key!=ConsoleKey.Escape)
+            {
+                RunningMenu();
+            }
+            
         }
 
     }
