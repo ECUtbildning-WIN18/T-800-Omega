@@ -46,7 +46,7 @@ namespace T800.Domain
                 }
                 catch
                 {
-                    Console.WriteLine("Wrong answer!!!:( You have to press a digit between 1-5");
+                    Console.WriteLine("Wrong answer!!!:( You have to press a digit between 1-7");
                 }
             } while (loop);
             Console.Clear();
