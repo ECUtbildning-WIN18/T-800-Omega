@@ -44,9 +44,17 @@ namespace T800.Domain
             IsActivated = false;
             Console.WriteLine("T-800 is Deactivated");
         }
-        public void ChooseTarget(BaseObject target)
+        public void ChooseTarget(List<BaseObject> targets)
         {
-            Target = target;
+           foreach(BaseObject target in targets)
+            {
+                Console.WriteLine(target.ToString());
+            }
+            int choosetarget = int.Parse(Console.ReadLine());
+            if (choosetarget < targets.Count && 0 <= choosetarget)
+                Target = targets[choosetarget];
+            else
+                ChooseTarget(targets);
             Console.WriteLine("The target is choosen");            
         }
         public void Attack()
