@@ -17,7 +17,7 @@ namespace T800.Domain
         public Menu()
         {
             Console.WriteLine(t800);
-            t800s.GetNumberOne().ChooseTarget(b3);
+            t800s.GetCollection()[0].ChooseTarget(b1);
         }
 
 
