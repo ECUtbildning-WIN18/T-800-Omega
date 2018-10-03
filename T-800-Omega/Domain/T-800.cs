@@ -67,6 +67,9 @@ namespace T800.Domain
                 }
             }
         }
+
+     
+        
         public void ShowStatus()
         {
             if (BatteryCharge == true)

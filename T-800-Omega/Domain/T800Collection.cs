@@ -20,11 +20,13 @@ namespace T800.Domain
             foreach(T800 t800 in t800List)
             {
                 t800.Attack();
+                
             }
         }
-        public T800 GetNumberOne()
+        public List<T800> GetCollection()
         {
-            return t800List[0];
+            return t800List;
+            
         }
     }
 }

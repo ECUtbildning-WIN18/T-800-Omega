@@ -21,7 +21,12 @@ namespace T800.Domain
 
         public Menu()
         {
+
             CreateTarget();
+
+          
+           
+
         }
 
 
