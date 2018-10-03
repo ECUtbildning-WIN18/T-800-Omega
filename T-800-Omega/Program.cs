@@ -1,7 +1,7 @@
 ﻿using System;
+using T800.Domain;
 
-
-namespace T800.Domain        //Ska det stå .Domain här? Det blir dock inga röda streck undertill!! Eller ska det stå "using T-800-Omega.Domain" ovan?
+namespace T800.Domain 
 {
     class Program
     {

@@ -2,22 +2,26 @@
 using System.Collections.Generic;
 using System.Text;
 
-
 namespace T800.Domain
 {
     class Menu
     {
         T800 t800 = new T800(0, true, true, true, null);
         T800Collection t800s = new T800Collection();
-        BaseObject b1 = new BaseObject(1, true);
-        BaseObject b2 = new BaseObject(2, true);
-        BaseObject b3 = new BaseObject(3, true);
 
+        List<BaseObject> targets = new List<BaseObject>(10);
+        
+      public void CreateTarget()
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                targets.Add(new BaseObject(i+1, true));
+            }
+        }
 
         public Menu()
         {
-            Console.WriteLine(t800);
-            t800s.GetNumberOne().ChooseTarget(b3);
+            CreateTarget();
         }
 
 
@@ -70,7 +74,7 @@ namespace T800.Domain
                     break;
 
                 case 5:
-                    t800.ChooseTarget(b2);
+                    t800.ChooseTarget(targets);
                     break;
 
                 case 6:
