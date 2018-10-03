@@ -68,12 +68,13 @@ namespace T800.Domain
                     Console.WriteLine("Attack attack");
 
                 }
-                else
-                {
-                    Target = null;
-                    Console.WriteLine("Target is not destructable.I Cannot attack on it ");
-                }
             }
+            else
+            { 
+                Target = null;
+                Console.WriteLine("Target is not destructable.I Cannot attack on it ");
+            }
+            
         }
 
      
