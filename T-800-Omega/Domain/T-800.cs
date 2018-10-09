@@ -44,9 +44,17 @@ namespace T800.Domain
             IsActivated = false;
             Console.WriteLine("T-800 is Deactivated");
         }
-        public void ChooseTarget(BaseObject target)
+        public void ChooseTarget(List<BaseObject> targets)
         {
-            Target = target;
+           foreach(BaseObject target in targets)
+            {
+                Console.WriteLine(target.ToString());
+            }
+            int choosetarget = int.Parse(Console.ReadLine());
+            if (choosetarget < targets.Count && 0 <= choosetarget)
+                Target = targets[choosetarget];
+            else
+                ChooseTarget(targets);
             Console.WriteLine("The target is choosen");            
         }
         public void Attack()
@@ -60,13 +68,17 @@ namespace T800.Domain
                     Console.WriteLine("Attack attack");
 
                 }
-                else
-                {
-                    Target = null;
-                    Console.WriteLine("Target is not destructable.I Cannot attack on it ");
-                }
             }
+            else
+            { 
+                Target = null;
+                Console.WriteLine("Target is not destructable.I Cannot attack on it ");
+            }
+            
         }
+
+     
+        
         public void ShowStatus()
         {
             if (BatteryCharge == true)

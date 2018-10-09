@@ -14,7 +14,11 @@ namespace T800.Domain
             {
                 ObjectId = objectid;
                 Destructable = destructable;
-            }        
+            }
+        public override string ToString()
+        {
+            return Convert.ToString(ObjectId);
+        }
 
     }
 }
